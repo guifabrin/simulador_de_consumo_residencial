@@ -1,0 +1,11 @@
+#app .action {
+    text-align: center;
+}
+
+#app .links {
+    margin-top: 25px;
+}
+
+#app .links>div a img {
+    height: 50px;
+}
