@@ -1,305 +1,310 @@
 .ul {
-	width: 100%;
-	height: 30px;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	background-color: #dddddd;
+    width: 100%;
+    height: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #dddddd;
 }
 
 .a {
-	display: block;
-	height: 30px;
-	width: 60px;
-	margin-left: 15px;
-	margin-top: 3px;
+    display: block;
+    height: 30px;
+    width: 60px;
+    margin-left: 15px;
+    margin-top: 3px;
 }
 
 .listview {
-	top: 73%;
-	overflow: auto;
-	left: 67%;
-	width: 31%;
-	height: 19%;
-	border: 1px solid;
+    top: 73%;
+    overflow: auto;
+    left: 67%;
+    width: 31%;
+    height: 19%;
+    border: 1px solid;
 }
 
 .print {
-	height: 7%;
-	width: 31%;
-	left: 67%;
-	top: 91.5%;
-	border: solid 1px;
+    height: 7%;
+    width: 31%;
+    left: 67%;
+    top: 91.5%;
+    border: solid 1px;
 }
 
 .image_print {
-	height: 100%;
-	left: 0%;
-	top: 0%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
 }
 
 .contador {
-	width: 23%;
-	height: 10%;
-	top: 18%;
-	left: 75%;
-	z-index: 1001;
-	position: absolute;
+    width: 23%;
+    height: 10%;
+    top: 18%;
+    left: 75%;
+    z-index: 1001;
+    position: absolute;
 }
 
 .result {
-	width: 100%;
-	height: 100%;
-	border-style: none;
-	background-color: transparent !important;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-color: transparent !important;
 }
 
 .topresult01 {
-	z-index: -5;
-	width: 25%;
-	top: 20%;
+    z-index: -5;
+    width: 25%;
+    top: 20%;
 }
 
 .topresult02 {
-	z-index: -5;
-	width: 25%;
-	top: 40%;
+    z-index: -5;
+    width: 25%;
+    top: 40%;
 }
 
-#mydiv{
-	z-index:300;
+#mydiv {
+    z-index: 300;
 }
-.this002{
-	margin-top:10px;
-	position:relative;
-	font-size:30px;
+
+.this002 {
+    margin-top: 10px;
+    position: relative;
+    font-size: 30px;
 }
-.this003{
-	margin-top:10px;
-margin-left:33%;
-margin-right:33%;
-	position:relative;
-	width:499px;
-height:626px;
-background-color:white;
+
+.this003 {
+    margin-top: 10px;
+    margin-left: 33%;
+    margin-right: 33%;
+    position: relative;
+    width: 499px;
+    height: 626px;
+    background-color: white;
 }
+
 .img01 {
-position:relative;
-width:220px;
-margin-left:10px;
-margin-bottom:10px;
+    position: relative;
+    width: 220px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
-.img02{
-position:relative;
-width:250px;
-margin-left:10px;
+
+.img02 {
+    position: relative;
+    width: 250px;
+    margin-left: 10px;
 }
+
 .otherdiv {
-	z-index: 101;
-	top: 33%;
-	left: 0%;
-	width: 66%;
-	height: 66%;
+    z-index: 101;
+    top: 33%;
+    left: 0%;
+    width: 66%;
+    height: 66%;
 }
 
 .telhado {
-	z-index: 199;
-	top: 5%;
-	left: -1%;
-	width: 68%;
-	height: 16%;
+    z-index: 199;
+    top: 5%;
+    left: -1%;
+    width: 68%;
+    height: 16%;
 }
 
 .help {
-	left: 205px;
-	top: 80px;
-	width: 470px;
-	height: 200px;
+    left: 205px;
+    top: 80px;
+    width: 470px;
+    height: 200px;
 }
+
 div {
-	position: absolute;
-	background-size: 100% 100%;
-	-webkit-background-size: 100% 100%;
-	-o-background-size: 100% 100%;
-	-khtml-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	background-attachment: initial;
-	background-origin: initial;
-	background-clip: initial;
-	background-color: initial;
-	background-position: initial initial;
-	background-repeat: no-repeat;
+    position: absolute;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -khtml-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    background-position: initial;
+    background-repeat: no-repeat;
 }
 
 img {
-	position: absolute;
+    position: absolute;
 }
 
 .comodo {
-	width: 50%;
-	height: 50%;
+    width: 50%;
+    height: 50%;
 }
 
 .full {
-	width: 100%;
-	height: 100%;
-	top: 0%;
-	left: 0%;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
 }
 
 .porta {
-	top: 35.5%;
-	left: 63%;
-	width: 10%;
-	height: 41%;
+    top: 35.5%;
+    left: 63%;
+    width: 10%;
+    height: 41%;
 }
 
 .transparente {
-	z-index: 5;
+    z-index: 5;
 }
 
 .foco {
-	z-index: 3;
-	display: ;
+    z-index: 3;
 }
 
 .toClicked {
-	z-index: 4;
+    z-index: 4;
 }
 
 .eletro {
-	z-index: 2;
+    z-index: 2;
 }
 
 .avc {
-	width: 2%;
-	height: 4%;
+    width: 2%;
+    height: 4%;
 }
 
 .conta {
-	top: 6%;
-	left: 67%;
-	width: 31.5%;
-	height: 55%;
-	z-index: -100;
+    top: 6%;
+    left: 67%;
+    width: 31.5%;
+    height: 55%;
+    z-index: -100;
 }
 
 .over {
-	top: 20%;
-	left: 0%;
-	width: 66%;
-	height: 79%;
-	overflow: hidden;
+    top: 20%;
+    left: 0%;
+    width: 66%;
+    height: 79%;
+    overflow: hidden;
 }
 
 .clone {
-	display: none;
-	top: 33%;
-	left: 15%;
-	width: 51%;
-	height: 66%;
+    display: none;
+    top: 33%;
+    left: 15%;
+    width: 51%;
+    height: 66%;
 }
 
 .toConfig {
-	top: 20%;
-	left: 0%;
-	width: 66%;
-	height: 79%;
-	z-index: 102;
+    top: 20%;
+    left: 0%;
+    width: 66%;
+    height: 79%;
+    z-index: 102;
 }
 
 .closeToConfig {
-	top: 0%;
-	left: 97%;
-	width: 3%;
-	height: 20px;
+    top: 0%;
+    left: 97%;
+    width: 3%;
+    height: 20px;
 }
 
 .configToConfig {
-	top: 80px;
-	width: 200px;
-	margin-left: 2px;
+    top: 80px;
+    width: 200px;
+    margin-left: 2px;
 }
 
 .config {
-	top: 0%;
-	left: 0%;
+    top: 0%;
+    left: 0%;
 }
 
 .input {
-	width: 33%;
-	background: none;
-	border: 0;
+    width: 33%;
+    background: none;
+    border: 0;
 }
 
 .inputs {
-	width: 33.33%;
+    width: 33.33%;
 }
 
 .cloneEletro {
-	left: 0%;
-	top: 0%;
-	height: 90px;
-	width: 136px;
+    left: 0%;
+    top: 0%;
+    height: 90px;
+    width: 136px;
 }
 
 .click {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .editor {
-	z-index: 101;
-	top: 8%;
-	left: 0%;
-	width: 100%;
+    z-index: 101;
+    top: 8%;
+    left: 0%;
+    width: 100%;
 }
 
 input {
-	width: 100%;
-	text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 .load {
-	z-index: 200;
-	background-color: rgb(255, 255, 255);
+    z-index: 200;
+    background-color: rgb(255, 255, 255);
 }
 
 
 .loading {
-	top: 45%;
-	left: 45%;
-	width: 50px;
-	height: 50px;
+    top: 45%;
+    left: 45%;
+    width: 50px;
+    height: 50px;
 }
 
 .dive {
-	width: 33%;
-	height: 18px;
+    width: 33%;
+    height: 18px;
 }
 
 .style {
-	z-index: 101;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	height: 19%;
-	font-family: sans-serif;
-	font-style: normal;
-	font-variant: small-caps;
-	font-weight: 900;
-	font-size: 25px;
-	line-height: 100%;
-	word-spacing: normal;
-	letter-spacing: normal;
-	text-decoration: none;
-	text-transform: none;
-	text-align: center;
-	text-indent: 0ex;
+    z-index: 101;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 19%;
+    font-family: sans-serif;
+    font-style: normal;
+    font-variant: small-caps;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 100%;
+    word-spacing: normal;
+    letter-spacing: normal;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    text-indent: 0ex;
 }
 
 .center {
-	width: 90%;
-	height: 90%;
-	left: 5%;
-	top: 5%;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 5%;
 }

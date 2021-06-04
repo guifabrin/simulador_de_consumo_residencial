@@ -3,386 +3,606 @@
 
 <head>
     <title>Simulador de Consumo Residencial</title>
-    <meta name="author" content="Guilherme Fabrin Franco">
-    <meta name="description" content="Simulador de Consumo Residencial - Copuryght">
-    <meta name="keywords" content="simulador, consumo, energia, demei, unijuí">
-    <meta name="robots" content="index,follow">
-    <meta http-equiv="content-language" content="pt-br">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="reply-to" content="guilherme.fabrin@gmail.com">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta content="Guilherme Fabrin Franco" name="author">
+    <meta content="Simulador de Consumo Residencial - Copuryght" name="description">
+    <meta content="simulador, consumo, energia, demei, unijuí" name="keywords">
+    <meta content="index,follow" name="robots">
+    <meta content="pt-br" http-equiv="content-language">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta content="guilherme.fabrin@gmail.com" name="reply-to">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
     <script src="./assets/scripts/jquery.js">
     </script>
     <script src="./assets/scripts/simulador.js">
     </script>
-    <link rel="stylesheet" type="text/css" href="./assets/styles/simulador.css" />
+    <link href="./assets/styles/simulador.css" rel="stylesheet" type="text/css"/>
 
 </head>
 
 <body onload="load();" onresize="resize()">
-    <!-- Tela de Loading -->
+<!-- Tela de Loading -->
 
-    <div class="load full">
-        <img class="loading" src='./assets/images/simulador/Geral/loading.gif'>
+<div class="load full">
+    <img class="loading" src='./assets/images/simulador/Geral/loading.gif'>
+</div>
+
+<!-- Div que contem os Comodos -->
+
+<div class='center'>
+    <div class='over'>
+
+        <div class="comodo" id="5"
+             name="Sala"
+             onmouseout="this.style.zIndex=4" onmouseover="this.style.zIndex=100" style="top:25%; left:25%; z-index:4; background-image:url('./assets/images/simulador/Comodos/Sala.png'); ">
+            <div class="porta toClicked click" onclick="reduzir('5','25','25'); mall();"
+                 title="Clique aqui para sair do comodo Sala">
+            </div>
+            <div class="full foco" id="Salafoco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(5,'Sala');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Sala" id="Salaluz" name="luz"
+                 onclick="ligar('Sala','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Salaluz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Salaluzavc" onclick="comod='Sala'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Sala')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Salaluzavc1" onclick="$('#Salaluzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+            <div class="eletro Sala" id="Salatv" name="tv"
+                 onclick="ligar('Sala','tv');"
+                 style="top:36%; left:8%; width:12%; height:20%; background-image:url('./assets/images/simulador/Eletros/tvoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Salatv').click()"
+                 style="top:36%; left:8%; width:12%; height:20%;" title="clique aqui para ligar o(a) tv">
+            </div>
+            <img class="eletro avc" id="Salatvavc" onclick="comod='Sala'; eletr='tv'; click1(); $('.editor').children().attr('value','Você está editando o(a) Televisão do(a) Sala')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:36%; left:20%;">
+            <img class="toClicked avc click" id="Salatvavc1" onclick="$('#Salatvavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:36%; left:20%;">
+            <div class="eletro Sala" id="Salagame" name="game"
+                 onclick="ligar('Sala','game');"
+                 style="top:69%; left:14%; width:8%; height:7%; background-image:url('./assets/images/simulador/Eletros/gameoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Salagame').click()"
+                 style="top:69%; left:14%; width:8%; height:7%;" title="clique aqui para ligar o(a) game">
+            </div>
+            <img class="eletro avc" id="Salagameavc" onclick="comod='Sala'; eletr='game'; click1(); $('.editor').children().attr('value','Você está editando o(a) Videogame do(a) Sala')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:69%; left:22%;">
+            <img class="toClicked avc click" id="Salagameavc1" onclick="$('#Salagameavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:69%; left:22%;">
+            <div class="eletro Sala" id="Saladvd" name="dvd"
+                 onclick="ligar('Sala','dvd');"
+                 style="top:80%; left:5%; width:9%; height:6%; background-image:url('./assets/images/simulador/Eletros/dvdoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Saladvd').click()"
+                 style="top:80%; left:5%; width:9%; height:6%;" title="clique aqui para ligar o(a) dvd">
+            </div>
+            <img class="eletro avc" id="Saladvdavc" onclick="comod='Sala'; eletr='dvd'; click1(); $('.editor').children().attr('value','Você está editando o(a) Aparelho de DVD do(a) Sala')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:80%; left:14%;">
+            <img class="toClicked avc click" id="Saladvdavc1" onclick="$('#Saladvdavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:80%; left:14%;">
+            <div class="eletro Sala" id="Salasom" name="som"
+                 onclick="ligar('Sala','som');"
+                 style="top:58%; left:32%; width:10%; height:10%; background-image:url('./assets/images/simulador/Eletros/somoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Salasom').click()"
+                 style="top:58%; left:32%; width:10%; height:10%;" title="clique aqui para ligar o(a) som">
+            </div>
+            <img class="eletro avc" id="Salasomavc" onclick="comod='Sala'; eletr='som'; click1(); $('.editor').children().attr('value','Você está editando o(a) aparelho de som do(a) Sala')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:58%; left:42%;">
+            <img class="toClicked avc click" id="Salasomavc1" onclick="$('#Salasomavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:58%; left:42%;">
+            <img class="eletro" id="Salasomnotas" src="./assets/images/simulador/Efeitos/notas.gif"
+                 style="display:none; width:10%; height:10%; top:48%; left:32%;">
+            <div class="eletro Sala" id="Salaclimatizador" name="climatizador"
+                 onclick="ligar('Sala','climatizador');"
+                 style="top:26%; left:60%; width:14%; height:7%; background-image:url('./assets/images/simulador/Eletros/climatizadoroff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Salaclimatizador').click()"
+                 style="top:26%; left:60%; width:14%; height:7%;" title="clique aqui para ligar o(a) climatizador">
+            </div>
+            <img class="eletro avc" id="Salaclimatizadoravc" onclick="comod='Sala'; eletr='climatizador'; click1(); $('.editor').children().attr('value','Você está editando o(a) Climatizador do(a) Sala')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:26%; left:74%;">
+            <img class="toClicked avc click" id="Salaclimatizadoravc1" onclick="$('#Salaclimatizadoravc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:26%; left:74%;">
+            <img class="eletro" id="Salaclimatizadorar" src="./assets/images/simulador/Efeitos/ar.gif"
+                 style="display:none; width:14%; height:7%; top:33%; left:60%;">
+        </div>
+        <div class="comodo" id="2"
+             name="Cozinha"
+             onmouseout="this.style.zIndex=2" onmouseover="this.style.zIndex=100" style="top:50%; left:25%; z-index:2; background-image:url('./assets/images/simulador/Comodos/Cozinha.png'); ">
+            <div class="porta toClicked click" onclick="reduzir('2','50','25'); mall();"
+                 title="Clique aqui para sair do comodo Cozinha">
+            </div>
+            <div class="full foco" id="Cozinhafoco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(2,'Cozinha');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Cozinha" id="Cozinhaluz" name="luz"
+                 onclick="ligar('Cozinha','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Cozinhaluz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Cozinhaluzavc" onclick="comod='Cozinha'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Cozinha')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Cozinhaluzavc1" onclick="$('#Cozinhaluzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+            <div class="eletro Cozinha" id="Cozinhageladeira" name="geladeira"
+                 onclick="ligar('Cozinha','geladeira');"
+                 style="top:25%; left:77%; width:18%; height:69%; background-image:url('./assets/images/simulador/Eletros/geladeiraoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Cozinhageladeira').click()"
+                 style="top:25%; left:77%; width:18%; height:69%;" title="clique aqui para ligar o(a) geladeira">
+            </div>
+            <img class="eletro avc" id="Cozinhageladeiraavc" onclick="comod='Cozinha'; eletr='geladeira'; click1(); $('.editor').children().attr('value','Você está editando o(a) Geladeira do(a) Cozinha')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:25%; left:95%;">
+            <img class="toClicked avc click" id="Cozinhageladeiraavc1" onclick="$('#Cozinhageladeiraavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:25%; left:95%;">
+            <div class="eletro Cozinha" id="Cozinhamicroondas" name="microondas"
+                 onclick="ligar('Cozinha','microondas');"
+                 style="top:54%; left:50%; width:8%; height:10%; background-image:url('./assets/images/simulador/Eletros/microondasoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Cozinhamicroondas').click()"
+                 style="top:54%; left:50%; width:8%; height:10%;" title="clique aqui para ligar o(a) microondas">
+            </div>
+            <img class="eletro avc" id="Cozinhamicroondasavc" onclick="comod='Cozinha'; eletr='microondas'; click1(); $('.editor').children().attr('value','Você está editando o(a) Microondas do(a) Cozinha')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:54%; left:58%;">
+            <img class="toClicked avc click" id="Cozinhamicroondasavc1" onclick="$('#Cozinhamicroondasavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:54%; left:58%;">
+            <div class="eletro Cozinha" id="Cozinhaforno" name="forno"
+                 onclick="ligar('Cozinha','forno');"
+                 style="top:54%; left:39%; width:7%; height:10%; background-image:url('./assets/images/simulador/Eletros/fornooff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Cozinhaforno').click()"
+                 style="top:54%; left:39%; width:7%; height:10%;" title="clique aqui para ligar o(a) forno">
+            </div>
+            <img class="eletro avc" id="Cozinhafornoavc" onclick="comod='Cozinha'; eletr='forno'; click1(); $('.editor').children().attr('value','Você está editando o(a) Forno elétrico do(a) Cozinha')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:54%; left:46%;">
+            <img class="toClicked avc click" id="Cozinhafornoavc1" onclick="$('#Cozinhafornoavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:54%; left:46%;">
+            <div class="eletro Cozinha" id="Cozinhacoifa" name="coifa"
+                 onclick="ligar('Cozinha','coifa');"
+                 style="top:22%; left:27%; width:12%; height:19%; background-image:url('./assets/images/simulador/Eletros/coifaoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Cozinhacoifa').click()"
+                 style="top:22%; left:27%; width:12%; height:19%;" title="clique aqui para ligar o(a) coifa">
+            </div>
+            <img class="eletro avc" id="Cozinhacoifaavc" onclick="comod='Cozinha'; eletr='coifa'; click1(); $('.editor').children().attr('value','Você está editando o(a) Coifa do(a) Cozinha')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:22%; left:39%;">
+            <img class="toClicked avc click" id="Cozinhacoifaavc1" onclick="$('#Cozinhacoifaavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:22%; left:39%;">
+        </div>
+        <div class="comodo" id="3"
+             name="Lavanderia"
+             onmouseout="this.style.zIndex=1" onmouseover="this.style.zIndex=100" style="top:50%; left:50%; z-index:1; background-image:url('./assets/images/simulador/Comodos/Lavanderia.png'); ">
+            <div class="porta toClicked click" onclick="reduzir('3','50','50'); mall();"
+                 title="Clique aqui para sair do comodo Lavanderia">
+            </div>
+            <div class="full foco" id="Lavanderiafoco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(3,'Lavanderia');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Lavanderia" id="Lavanderialuz" name="luz"
+                 onclick="ligar('Lavanderia','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Lavanderialuz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Lavanderialuzavc" onclick="comod='Lavanderia'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Lavanderia')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Lavanderialuzavc1" onclick="$('#Lavanderialuzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+            <div class="eletro Lavanderia" id="Lavanderiamqlavar" name="mqlavar"
+                 onclick="ligar('Lavanderia','mqlavar');"
+                 style="top:57%; left:38%; width:12%; height:23%; background-image:url('./assets/images/simulador/Eletros/mqlavaroff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Lavanderiamqlavar').click()"
+                 style="top:57%; left:38%; width:12%; height:23%;" title="clique aqui para ligar o(a) mqlavar">
+            </div>
+            <img class="eletro avc" id="Lavanderiamqlavaravc" onclick="comod='Lavanderia'; eletr='mqlavar'; click1(); $('.editor').children().attr('value','Você está editando o(a) Máquina de lavar roupas do(a) Lavanderia')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:57%; left:50%;">
+            <img class="toClicked avc click" id="Lavanderiamqlavaravc1" onclick="$('#Lavanderiamqlavaravc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:57%; left:50%;">
+            <div class="eletro Lavanderia" id="Lavanderiamqsecar" name="mqsecar"
+                 onclick="ligar('Lavanderia','mqsecar');"
+                 style="top:57%; left:20%; width:14%; height:23%; background-image:url('./assets/images/simulador/Eletros/mqsecaroff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Lavanderiamqsecar').click()"
+                 style="top:57%; left:20%; width:14%; height:23%;" title="clique aqui para ligar o(a) mqsecar">
+            </div>
+            <img class="eletro avc" id="Lavanderiamqsecaravc" onclick="comod='Lavanderia'; eletr='mqsecar'; click1(); $('.editor').children().attr('value','Você está editando o(a) Máquina de secar roupas do(a) Lavanderia')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:57%; left:34%;">
+            <img class="toClicked avc click" id="Lavanderiamqsecaravc1" onclick="$('#Lavanderiamqsecaravc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:57%; left:34%;">
+        </div>
+        <div class="comodo" id="4"
+             name="Quarto"
+             onmouseout="this.style.zIndex=3" onmouseover="this.style.zIndex=100" style="top:25%; left:0%; z-index:3; background-image:url('./assets/images/simulador/Comodos/Quarto.png'); ">
+            <div class="porta toClicked click" onclick="reduzir('4','25','0'); mall();"
+                 title="Clique aqui para sair do comodo Quarto">
+            </div>
+            <div class="full foco" id="Quartofoco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(4,'Quarto');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Quarto" id="Quartoluz" name="luz"
+                 onclick="ligar('Quarto','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Quartoluz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Quartoluzavc" onclick="comod='Quarto'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Quarto')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Quartoluzavc1" onclick="$('#Quartoluzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+            <div class="eletro Quarto" id="Quartotv" name="tv"
+                 onclick="ligar('Quarto','tv');"
+                 style="top:40%; left:5%; width:9%; height:20%; background-image:url('./assets/images/simulador/Eletros/tvoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Quartotv').click()"
+                 style="top:40%; left:5%; width:9%; height:20%;" title="clique aqui para ligar o(a) tv">
+            </div>
+            <img class="eletro avc" id="Quartotvavc" onclick="comod='Quarto'; eletr='tv'; click1(); $('.editor').children().attr('value','Você está editando o(a) Televisão do(a) Quarto')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:40%; left:14%;">
+            <img class="toClicked avc click" id="Quartotvavc1" onclick="$('#Quartotvavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:40%; left:14%;">
+            <div class="eletro Quarto" id="Quartoclimatizador" name="climatizador"
+                 onclick="ligar('Quarto','climatizador');"
+                 style="top:26%; left:60%; width:14%; height:7%; background-image:url('./assets/images/simulador/Eletros/climatizadoroff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Quartoclimatizador').click()"
+                 style="top:26%; left:60%; width:14%; height:7%;" title="clique aqui para ligar o(a) climatizador">
+            </div>
+            <img class="eletro avc" id="Quartoclimatizadoravc" onclick="comod='Quarto'; eletr='climatizador'; click1(); $('.editor').children().attr('value','Você está editando o(a) Climatizador do(a) Quarto')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:26%; left:74%;">
+            <img class="toClicked avc click" id="Quartoclimatizadoravc1" onclick="$('#Quartoclimatizadoravc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:26%; left:74%;">
+            <img class="eletro" id="Quartoclimatizadorar" src="./assets/images/simulador/Efeitos/ar.gif"
+                 style="display:none; width:14%; height:7%; top:33%; left:60%;">
+        </div>
+        <div class="comodo" id="7"
+             name="Quarto2"
+             onmouseout="this.style.zIndex=1" onmouseover="this.style.zIndex=100" style="top:0%; left:0%; z-index:1; background-image:url('./assets/images/simulador/Comodos/Quarto2.png'); ">
+            <div class="porta toClicked click" onclick="reduzir('7','0','0'); mall();"
+                 title="Clique aqui para sair do comodo Quarto2">
+            </div>
+            <div class="full foco" id="Quarto2foco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(7,'Quarto2');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Quarto2" id="Quarto2luz" name="luz"
+                 onclick="ligar('Quarto2','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Quarto2luz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Quarto2luzavc" onclick="comod='Quarto2'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Quarto2')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Quarto2luzavc1" onclick="$('#Quarto2luzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+            <div class="eletro Quarto2" id="Quarto2abajur" name="abajur"
+                 onclick="ligar('Quarto2','abajur');"
+                 style="top:57.5%; left:23%; width:5%; height:10%; background-image:url('./assets/images/simulador/Eletros/abajuroff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Quarto2abajur').click()"
+                 style="top:57.5%; left:23%; width:5%; height:10%;" title="clique aqui para ligar o(a) abajur">
+            </div>
+            <img class="eletro avc" id="Quarto2abajuravc" onclick="comod='Quarto2'; eletr='abajur'; click1(); $('.editor').children().attr('value','Você está editando o(a) Abajur do(a) Quarto2')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:57.5%; left:28%;">
+            <img class="toClicked avc click" id="Quarto2abajuravc1" onclick="$('#Quarto2abajuravc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:57.5%; left:28%;">
+            <img class="eletro" id="Quarto2abajurabajur" src="./assets/images/simulador/Efeitos/abajurefect.png"
+                 style="display:none; width:5%; height:8%; top:59.5%; left:21%;">
+        </div>
+        <div class="comodo" id="6"
+             name="Banheiro"
+             onmouseout="this.style.zIndex=3" onmouseover="this.style.zIndex=100" style="top: 25%; left: 50%; z-index: 3; background-image: url('./assets/images/simulador/Comodos/Banheiro.png');">
+            <div class="porta toClicked click" onclick="reduzir('6','25','50'); mall();"
+                 title="Clique aqui para sair do comodo Banheiro">
+            </div>
+            <div class="full foco" id="Banheirofoco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(6,'Banheiro');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Banheiro" id="Banheiroluz" name="luz"
+                 onclick="ligar('Banheiro','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Banheiroluz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Banheiroluzavc" onclick="comod='Banheiro'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Banheiro')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Banheiroluzavc1" onclick="$('#Banheiroluzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+            <div class="eletro Banheiro" id="Banheirochuveiro" name="chuveiro"
+                 onclick="ligar('Banheiro','chuveiro');"
+                 style="top:33%; left:8%; width:10%; height:6%; background-image:url('./assets/images/simulador/Eletros/chuveirooff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Banheirochuveiro').click()"
+                 style="top:33%; left:8%; width:10%; height:6%;" title="clique aqui para ligar o(a) chuveiro">
+            </div>
+            <img class="eletro avc" id="Banheirochuveiroavc" onclick="comod='Banheiro'; eletr='chuveiro'; click1(); $('.editor').children().attr('value','Você está editando o(a) Chuveiro do(a) Banheiro')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:33%; left:18%;">
+            <img class="toClicked avc click" id="Banheirochuveiroavc1" onclick="$('#Banheirochuveiroavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:33%; left:18%;">
+            <img class="eletro" id="Banheirochuveiropingo"
+                 src="./assets/images/simulador/Efeitos/pingo.gif"
+                 style="display:none; width:3%; height:50%; top:39%; left:14.5%;">
+        </div>
+        <div class="comodo" id="9"
+             name="Banheiro1"
+             onmouseout="this.style.zIndex=1" onmouseover="this.style.zIndex=100" style="top: 0%; left: 50%; z-index: 1; background-image: url('./assets/images/simulador/Comodos/Banheiro1.png');">
+            <div class="porta toClicked click" onclick="reduzir('9','0','50'); mall();"
+                 title="Clique aqui para sair do comodo Banheiro1">
+            </div>
+            <div class="full foco" id="Banheiro1foco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(9,'Banheiro1');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Banheiro1" id="Banheiro1luz" name="luz"
+                 onclick="ligar('Banheiro1','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Banheiro1luz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Banheiro1luzavc" onclick="comod='Banheiro1'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Banheiro1')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Banheiro1luzavc1" onclick="$('#Banheiro1luzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+            <div class="eletro Banheiro1" id="Banheiro1chuveiro" name="chuveiro"
+                 onclick="ligar('Banheiro1','chuveiro');"
+                 style="top:33%; left:8%; width:10%; height:6%; background-image:url('./assets/images/simulador/Eletros/chuveirooff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Banheiro1chuveiro').click()"
+                 style="top:33%; left:8%; width:10%; height:6%;" title="clique aqui para ligar o(a) chuveiro">
+            </div>
+            <img class="eletro avc" id="Banheiro1chuveiroavc" onclick="comod='Banheiro1'; eletr='chuveiro'; click1(); $('.editor').children().attr('value','Você está editando o(a) Chuveiro do(a) Banheiro1')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:33%; left:18%;">
+            <img class="toClicked avc click" id="Banheiro1chuveiroavc1" onclick="$('#Banheiro1chuveiroavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:33%; left:18%;">
+            <img class="eletro" id="Banheiro1chuveiropingo"
+                 src="./assets/images/simulador/Efeitos/pingo.gif"
+                 style="display:none; width:3%; height:50%; top:39%; left:14.5%;">
+        </div>
+        <div class="comodo" id="1"
+             name="Escritorio"
+             onmouseout="this.style.zIndex=1" onmouseover="this.style.zIndex=100" style="top:50%; left:0%; z-index:1; background-image:url('./assets/images/simulador/Comodos/Escritorio.png'); ">
+            <div class="porta toClicked click" onclick="reduzir('1','50','0'); mall();"
+                 title="Clique aqui para sair do comodo Escritorio">
+            </div>
+            <div class="full foco" id="Escritoriofoco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(1,'Escritorio');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Escritorio" id="Escritorioluz" name="luz"
+                 onclick="ligar('Escritorio','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Escritorioluz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Escritorioluzavc" onclick="comod='Escritorio'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Escritorio')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Escritorioluzavc1" onclick="$('#Escritorioluzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+            <div class="eletro Escritorio" id="Escritorioabajur" name="abajur"
+                 onclick="ligar('Escritorio','abajur');"
+                 style="top:56%; left:45%; width:5%; height:10%; background-image:url('./assets/images/simulador/Eletros/abajuroff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Escritorioabajur').click()"
+                 style="top:56%; left:45%; width:5%; height:10%;" title="clique aqui para ligar o(a) abajur">
+            </div>
+            <img class="eletro avc" id="Escritorioabajuravc" onclick="comod='Escritorio'; eletr='abajur'; click1(); $('.editor').children().attr('value','Você está editando o(a) Abajur do(a) Escritorio')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:56%; left:50%;">
+            <img class="toClicked avc click" id="Escritorioabajuravc1" onclick="$('#Escritorioabajuravc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:56%; left:50%;">
+            <img class="eletro" id="Escritorioabajurabajur"
+                 src="./assets/images/simulador/Efeitos/abajurefect.png"
+                 style="display:none; width:5%; height:8%; top:58%; left:43%;">
+            <div class="eletro Escritorio" id="Escritoriocomputador" name="computador"
+                 onclick="ligar('Escritorio','computador');"
+                 style="top:60%; left:10%; width:12%; height:11%; background-image:url('./assets/images/simulador/Eletros/computadoroff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Escritoriocomputador').click()"
+                 style="top:60%; left:10%; width:12%; height:11%;" title="clique aqui para ligar o(a) computador">
+            </div>
+            <img class="eletro avc" id="Escritoriocomputadoravc" onclick="comod='Escritorio'; eletr='computador'; click1(); $('.editor').children().attr('value','Você está editando o(a) Computador (DESKTOP) do(a) Escritorio')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:60%; left:22%;">
+            <img class="toClicked avc click" id="Escritoriocomputadoravc1" onclick="$('#Escritoriocomputadoravc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:60%; left:22%;">
+        </div>
+        <div class="comodo" id="8"
+             name="Quarto3"
+             onmouseout="this.style.zIndex=2" onmouseover="this.style.zIndex=100" style="top:0%; left:25%; z-index:2; background-image:url('./assets/images/simulador/Comodos/Quarto3.png'); ">
+            <div class="porta toClicked click" onclick="reduzir('8','0','25'); mall();"
+                 title="Clique aqui para sair do comodo Quarto3">
+            </div>
+            <div class="full foco" id="Quarto3foco"
+                 style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
+            </div>
+            <div class="full transparente click" onclick="aumentar(8,'Quarto3');">
+            </div>
+            <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
+            <div class="eletro Quarto3" id="Quarto3luz" name="luz"
+                 onclick="ligar('Quarto3','luz');"
+                 style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')">
+            </div>
+            <div class="toClicked click" onclick="$('#Quarto3luz').click()"
+                 style="top:12%; left:49%; width:2%; height:15%;" title="clique aqui para ligar o(a) luz">
+            </div>
+            <img class="eletro avc" id="Quarto3luzavc" onclick="comod='Quarto3'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Quarto3')"
+                 src="./assets/images/simulador/Geral/advanced.png"
+                 style="display:none; top:12%; left:51%;">
+            <img class="toClicked avc click" id="Quarto3luzavc1" onclick="$('#Quarto3luzavc').click()"
+                 src="./assets/images/simulador/Geral/transparente.png" style="display:none; top:12%; left:51%;">
+        </div>
     </div>
 
-    <!-- Div que contem os Comodos -->
 
-    <div class='center'>
-        <div class='over'>
-
-            <div name="Sala" id="5" class="comodo" style="top:25%; left:25%; z-index:4; background-image:url('./assets/images/simulador/Comodos/Sala.png'); " onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=4">
-                <div title="Clique aqui para sair do comodo Sala" class="porta toClicked click" onclick="reduzir('5','25','25'); mall();">
-                </div>
-                <div class="full foco" id="Salafoco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(5,'Sala');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Salaluz" name="luz" class="eletro Sala" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Sala','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Salaluz').click()">
-                </div>
-                <img id="Salaluzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Sala'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Sala')">
-                <img id="Salaluzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Salaluzavc').click()">
-                <div id="Salatv" name="tv" class="eletro Sala" style="top:36%; left:8%; width:12%; height:20%; background-image:url('./assets/images/simulador/Eletros/tvoff.png')" onclick="ligar('Sala','tv');">
-                </div>
-                <div title="clique aqui para ligar o(a) tv" class="toClicked click" style="top:36%; left:8%; width:12%; height:20%;" onclick="$('#Salatv').click()">
-                </div>
-                <img id="Salatvavc" class="eletro avc" style="display:none; top:36%; left:20%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Sala'; eletr='tv'; click1(); $('.editor').children().attr('value','Você está editando o(a) Televisão do(a) Sala')">
-                <img id="Salatvavc1" class="toClicked avc click" style="display:none; top:36%; left:20%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Salatvavc').click()">
-                <div id="Salagame" name="game" class="eletro Sala" style="top:69%; left:14%; width:8%; height:7%; background-image:url('./assets/images/simulador/Eletros/gameoff.png')" onclick="ligar('Sala','game');">
-                </div>
-                <div title="clique aqui para ligar o(a) game" class="toClicked click" style="top:69%; left:14%; width:8%; height:7%;" onclick="$('#Salagame').click()">
-                </div>
-                <img id="Salagameavc" class="eletro avc" style="display:none; top:69%; left:22%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Sala'; eletr='game'; click1(); $('.editor').children().attr('value','Você está editando o(a) Videogame do(a) Sala')">
-                <img id="Salagameavc1" class="toClicked avc click" style="display:none; top:69%; left:22%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Salagameavc').click()">
-                <div id="Saladvd" name="dvd" class="eletro Sala" style="top:80%; left:5%; width:9%; height:6%; background-image:url('./assets/images/simulador/Eletros/dvdoff.png')" onclick="ligar('Sala','dvd');">
-                </div>
-                <div title="clique aqui para ligar o(a) dvd" class="toClicked click" style="top:80%; left:5%; width:9%; height:6%;" onclick="$('#Saladvd').click()">
-                </div>
-                <img id="Saladvdavc" class="eletro avc" style="display:none; top:80%; left:14%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Sala'; eletr='dvd'; click1(); $('.editor').children().attr('value','Você está editando o(a) Aparelho de DVD do(a) Sala')">
-                <img id="Saladvdavc1" class="toClicked avc click" style="display:none; top:80%; left:14%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Saladvdavc').click()">
-                <div id="Salasom" name="som" class="eletro Sala" style="top:58%; left:32%; width:10%; height:10%; background-image:url('./assets/images/simulador/Eletros/somoff.png')" onclick="ligar('Sala','som');">
-                </div>
-                <div title="clique aqui para ligar o(a) som" class="toClicked click" style="top:58%; left:32%; width:10%; height:10%;" onclick="$('#Salasom').click()">
-                </div>
-                <img id="Salasomavc" class="eletro avc" style="display:none; top:58%; left:42%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Sala'; eletr='som'; click1(); $('.editor').children().attr('value','Você está editando o(a) aparelho de som do(a) Sala')">
-                <img id="Salasomavc1" class="toClicked avc click" style="display:none; top:58%; left:42%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Salasomavc').click()">
-                <img id="Salasomnotas" class="eletro" style="display:none; width:10%; height:10%; top:48%; left:32%;" src="./assets/images/simulador/Efeitos/notas.gif">
-                <div id="Salaclimatizador" name="climatizador" class="eletro Sala" style="top:26%; left:60%; width:14%; height:7%; background-image:url('./assets/images/simulador/Eletros/climatizadoroff.png')" onclick="ligar('Sala','climatizador');">
-                </div>
-                <div title="clique aqui para ligar o(a) climatizador" class="toClicked click" style="top:26%; left:60%; width:14%; height:7%;" onclick="$('#Salaclimatizador').click()">
-                </div>
-                <img id="Salaclimatizadoravc" class="eletro avc" style="display:none; top:26%; left:74%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Sala'; eletr='climatizador'; click1(); $('.editor').children().attr('value','Você está editando o(a) Climatizador do(a) Sala')">
-                <img id="Salaclimatizadoravc1" class="toClicked avc click" style="display:none; top:26%; left:74%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Salaclimatizadoravc').click()">
-                <img id="Salaclimatizadorar" class="eletro" style="display:none; width:14%; height:7%; top:33%; left:60%;" src="./assets/images/simulador/Efeitos/ar.gif">
-            </div>
-            <div name="Cozinha" id="2" class="comodo" style="top:50%; left:25%; z-index:2; background-image:url('./assets/images/simulador/Comodos/Cozinha.png'); " onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=2">
-                <div title="Clique aqui para sair do comodo Cozinha" class="porta toClicked click" onclick="reduzir('2','50','25'); mall();">
-                </div>
-                <div class="full foco" id="Cozinhafoco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(2,'Cozinha');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Cozinhaluz" name="luz" class="eletro Cozinha" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Cozinha','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Cozinhaluz').click()">
-                </div>
-                <img id="Cozinhaluzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Cozinha'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Cozinha')">
-                <img id="Cozinhaluzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Cozinhaluzavc').click()">
-                <div id="Cozinhageladeira" name="geladeira" class="eletro Cozinha" style="top:25%; left:77%; width:18%; height:69%; background-image:url('./assets/images/simulador/Eletros/geladeiraoff.png')" onclick="ligar('Cozinha','geladeira');">
-                </div>
-                <div title="clique aqui para ligar o(a) geladeira" class="toClicked click" style="top:25%; left:77%; width:18%; height:69%;" onclick="$('#Cozinhageladeira').click()">
-                </div>
-                <img id="Cozinhageladeiraavc" class="eletro avc" style="display:none; top:25%; left:95%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Cozinha'; eletr='geladeira'; click1(); $('.editor').children().attr('value','Você está editando o(a) Geladeira do(a) Cozinha')">
-                <img id="Cozinhageladeiraavc1" class="toClicked avc click" style="display:none; top:25%; left:95%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Cozinhageladeiraavc').click()">
-                <div id="Cozinhamicroondas" name="microondas" class="eletro Cozinha" style="top:54%; left:50%; width:8%; height:10%; background-image:url('./assets/images/simulador/Eletros/microondasoff.png')" onclick="ligar('Cozinha','microondas');">
-                </div>
-                <div title="clique aqui para ligar o(a) microondas" class="toClicked click" style="top:54%; left:50%; width:8%; height:10%;" onclick="$('#Cozinhamicroondas').click()">
-                </div>
-                <img id="Cozinhamicroondasavc" class="eletro avc" style="display:none; top:54%; left:58%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Cozinha'; eletr='microondas'; click1(); $('.editor').children().attr('value','Você está editando o(a) Microondas do(a) Cozinha')">
-                <img id="Cozinhamicroondasavc1" class="toClicked avc click" style="display:none; top:54%; left:58%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Cozinhamicroondasavc').click()">
-                <div id="Cozinhaforno" name="forno" class="eletro Cozinha" style="top:54%; left:39%; width:7%; height:10%; background-image:url('./assets/images/simulador/Eletros/fornooff.png')" onclick="ligar('Cozinha','forno');">
-                </div>
-                <div title="clique aqui para ligar o(a) forno" class="toClicked click" style="top:54%; left:39%; width:7%; height:10%;" onclick="$('#Cozinhaforno').click()">
-                </div>
-                <img id="Cozinhafornoavc" class="eletro avc" style="display:none; top:54%; left:46%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Cozinha'; eletr='forno'; click1(); $('.editor').children().attr('value','Você está editando o(a) Forno elétrico do(a) Cozinha')">
-                <img id="Cozinhafornoavc1" class="toClicked avc click" style="display:none; top:54%; left:46%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Cozinhafornoavc').click()">
-                <div id="Cozinhacoifa" name="coifa" class="eletro Cozinha" style="top:22%; left:27%; width:12%; height:19%; background-image:url('./assets/images/simulador/Eletros/coifaoff.png')" onclick="ligar('Cozinha','coifa');">
-                </div>
-                <div title="clique aqui para ligar o(a) coifa" class="toClicked click" style="top:22%; left:27%; width:12%; height:19%;" onclick="$('#Cozinhacoifa').click()">
-                </div>
-                <img id="Cozinhacoifaavc" class="eletro avc" style="display:none; top:22%; left:39%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Cozinha'; eletr='coifa'; click1(); $('.editor').children().attr('value','Você está editando o(a) Coifa do(a) Cozinha')">
-                <img id="Cozinhacoifaavc1" class="toClicked avc click" style="display:none; top:22%; left:39%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Cozinhacoifaavc').click()">
-            </div>
-            <div name="Lavanderia" id="3" class="comodo" style="top:50%; left:50%; z-index:1; background-image:url('./assets/images/simulador/Comodos/Lavanderia.png'); " onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=1">
-                <div title="Clique aqui para sair do comodo Lavanderia" class="porta toClicked click" onclick="reduzir('3','50','50'); mall();">
-                </div>
-                <div class="full foco" id="Lavanderiafoco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(3,'Lavanderia');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Lavanderialuz" name="luz" class="eletro Lavanderia" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Lavanderia','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Lavanderialuz').click()">
-                </div>
-                <img id="Lavanderialuzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Lavanderia'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Lavanderia')">
-                <img id="Lavanderialuzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Lavanderialuzavc').click()">
-                <div id="Lavanderiamqlavar" name="mqlavar" class="eletro Lavanderia" style="top:57%; left:38%; width:12%; height:23%; background-image:url('./assets/images/simulador/Eletros/mqlavaroff.png')" onclick="ligar('Lavanderia','mqlavar');">
-                </div>
-                <div title="clique aqui para ligar o(a) mqlavar" class="toClicked click" style="top:57%; left:38%; width:12%; height:23%;" onclick="$('#Lavanderiamqlavar').click()">
-                </div>
-                <img id="Lavanderiamqlavaravc" class="eletro avc" style="display:none; top:57%; left:50%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Lavanderia'; eletr='mqlavar'; click1(); $('.editor').children().attr('value','Você está editando o(a) Máquina de lavar roupas do(a) Lavanderia')">
-                <img id="Lavanderiamqlavaravc1" class="toClicked avc click" style="display:none; top:57%; left:50%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Lavanderiamqlavaravc').click()">
-                <div id="Lavanderiamqsecar" name="mqsecar" class="eletro Lavanderia" style="top:57%; left:20%; width:14%; height:23%; background-image:url('./assets/images/simulador/Eletros/mqsecaroff.png')" onclick="ligar('Lavanderia','mqsecar');">
-                </div>
-                <div title="clique aqui para ligar o(a) mqsecar" class="toClicked click" style="top:57%; left:20%; width:14%; height:23%;" onclick="$('#Lavanderiamqsecar').click()">
-                </div>
-                <img id="Lavanderiamqsecaravc" class="eletro avc" style="display:none; top:57%; left:34%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Lavanderia'; eletr='mqsecar'; click1(); $('.editor').children().attr('value','Você está editando o(a) Máquina de secar roupas do(a) Lavanderia')">
-                <img id="Lavanderiamqsecaravc1" class="toClicked avc click" style="display:none; top:57%; left:34%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Lavanderiamqsecaravc').click()">
-            </div>
-            <div name="Quarto" id="4" class="comodo" style="top:25%; left:0%; z-index:3; background-image:url('./assets/images/simulador/Comodos/Quarto.png'); " onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=3">
-                <div title="Clique aqui para sair do comodo Quarto" class="porta toClicked click" onclick="reduzir('4','25','0'); mall();">
-                </div>
-                <div class="full foco" id="Quartofoco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(4,'Quarto');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Quartoluz" name="luz" class="eletro Quarto" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Quarto','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Quartoluz').click()">
-                </div>
-                <img id="Quartoluzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Quarto'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Quarto')">
-                <img id="Quartoluzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Quartoluzavc').click()">
-                <div id="Quartotv" name="tv" class="eletro Quarto" style="top:40%; left:5%; width:9%; height:20%; background-image:url('./assets/images/simulador/Eletros/tvoff.png')" onclick="ligar('Quarto','tv');">
-                </div>
-                <div title="clique aqui para ligar o(a) tv" class="toClicked click" style="top:40%; left:5%; width:9%; height:20%;" onclick="$('#Quartotv').click()">
-                </div>
-                <img id="Quartotvavc" class="eletro avc" style="display:none; top:40%; left:14%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Quarto'; eletr='tv'; click1(); $('.editor').children().attr('value','Você está editando o(a) Televisão do(a) Quarto')">
-                <img id="Quartotvavc1" class="toClicked avc click" style="display:none; top:40%; left:14%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Quartotvavc').click()">
-                <div id="Quartoclimatizador" name="climatizador" class="eletro Quarto" style="top:26%; left:60%; width:14%; height:7%; background-image:url('./assets/images/simulador/Eletros/climatizadoroff.png')" onclick="ligar('Quarto','climatizador');">
-                </div>
-                <div title="clique aqui para ligar o(a) climatizador" class="toClicked click" style="top:26%; left:60%; width:14%; height:7%;" onclick="$('#Quartoclimatizador').click()">
-                </div>
-                <img id="Quartoclimatizadoravc" class="eletro avc" style="display:none; top:26%; left:74%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Quarto'; eletr='climatizador'; click1(); $('.editor').children().attr('value','Você está editando o(a) Climatizador do(a) Quarto')">
-                <img id="Quartoclimatizadoravc1" class="toClicked avc click" style="display:none; top:26%; left:74%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Quartoclimatizadoravc').click()">
-                <img id="Quartoclimatizadorar" class="eletro" style="display:none; width:14%; height:7%; top:33%; left:60%;" src="./assets/images/simulador/Efeitos/ar.gif">
-            </div>
-            <div name="Quarto2" id="7" class="comodo" style="top:0%; left:0%; z-index:1; background-image:url('./assets/images/simulador/Comodos/Quarto2.png'); " onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=1">
-                <div title="Clique aqui para sair do comodo Quarto2" class="porta toClicked click" onclick="reduzir('7','0','0'); mall();">
-                </div>
-                <div class="full foco" id="Quarto2foco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(7,'Quarto2');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Quarto2luz" name="luz" class="eletro Quarto2" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Quarto2','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Quarto2luz').click()">
-                </div>
-                <img id="Quarto2luzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Quarto2'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Quarto2')">
-                <img id="Quarto2luzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Quarto2luzavc').click()">
-                <div id="Quarto2abajur" name="abajur" class="eletro Quarto2" style="top:57.5%; left:23%; width:5%; height:10%; background-image:url('./assets/images/simulador/Eletros/abajuroff.png')" onclick="ligar('Quarto2','abajur');">
-                </div>
-                <div title="clique aqui para ligar o(a) abajur" class="toClicked click" style="top:57.5%; left:23%; width:5%; height:10%;" onclick="$('#Quarto2abajur').click()">
-                </div>
-                <img id="Quarto2abajuravc" class="eletro avc" style="display:none; top:57.5%; left:28%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Quarto2'; eletr='abajur'; click1(); $('.editor').children().attr('value','Você está editando o(a) Abajur do(a) Quarto2')">
-                <img id="Quarto2abajuravc1" class="toClicked avc click" style="display:none; top:57.5%; left:28%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Quarto2abajuravc').click()">
-                <img id="Quarto2abajurabajur" class="eletro" style="display:none; width:5%; height:8%; top:59.5%; left:21%;" src="./assets/images/simulador/Efeitos/abajurefect.png">
-            </div>
-            <div name="Banheiro" id="6" class="comodo" style="top: 25%; left: 50%; z-index: 3; background-image: url('./assets/images/simulador/Comodos/Banheiro.png');" onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=3">
-                <div title="Clique aqui para sair do comodo Banheiro" class="porta toClicked click" onclick="reduzir('6','25','50'); mall();">
-                </div>
-                <div class="full foco" id="Banheirofoco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(6,'Banheiro');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Banheiroluz" name="luz" class="eletro Banheiro" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Banheiro','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Banheiroluz').click()">
-                </div>
-                <img id="Banheiroluzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Banheiro'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Banheiro')">
-                <img id="Banheiroluzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Banheiroluzavc').click()">
-                <div id="Banheirochuveiro" name="chuveiro" class="eletro Banheiro" style="top:33%; left:8%; width:10%; height:6%; background-image:url('./assets/images/simulador/Eletros/chuveirooff.png')" onclick="ligar('Banheiro','chuveiro');">
-                </div>
-                <div title="clique aqui para ligar o(a) chuveiro" class="toClicked click" style="top:33%; left:8%; width:10%; height:6%;" onclick="$('#Banheirochuveiro').click()">
-                </div>
-                <img id="Banheirochuveiroavc" class="eletro avc" style="display:none; top:33%; left:18%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Banheiro'; eletr='chuveiro'; click1(); $('.editor').children().attr('value','Você está editando o(a) Chuveiro do(a) Banheiro')">
-                <img id="Banheirochuveiroavc1" class="toClicked avc click" style="display:none; top:33%; left:18%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Banheirochuveiroavc').click()">
-                <img id="Banheirochuveiropingo" class="eletro" style="display:none; width:3%; height:50%; top:39%; left:14.5%;" src="./assets/images/simulador/Efeitos/pingo.gif">
-            </div>
-            <div name="Banheiro1" id="9" class="comodo" style="top: 0%; left: 50%; z-index: 1; background-image: url('./assets/images/simulador/Comodos/Banheiro1.png');" onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=1">
-                <div title="Clique aqui para sair do comodo Banheiro1" class="porta toClicked click" onclick="reduzir('9','0','50'); mall();">
-                </div>
-                <div class="full foco" id="Banheiro1foco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(9,'Banheiro1');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Banheiro1luz" name="luz" class="eletro Banheiro1" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Banheiro1','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Banheiro1luz').click()">
-                </div>
-                <img id="Banheiro1luzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Banheiro1'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Banheiro1')">
-                <img id="Banheiro1luzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Banheiro1luzavc').click()">
-                <div id="Banheiro1chuveiro" name="chuveiro" class="eletro Banheiro1" style="top:33%; left:8%; width:10%; height:6%; background-image:url('./assets/images/simulador/Eletros/chuveirooff.png')" onclick="ligar('Banheiro1','chuveiro');">
-                </div>
-                <div title="clique aqui para ligar o(a) chuveiro" class="toClicked click" style="top:33%; left:8%; width:10%; height:6%;" onclick="$('#Banheiro1chuveiro').click()">
-                </div>
-                <img id="Banheiro1chuveiroavc" class="eletro avc" style="display:none; top:33%; left:18%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Banheiro1'; eletr='chuveiro'; click1(); $('.editor').children().attr('value','Você está editando o(a) Chuveiro do(a) Banheiro1')">
-                <img id="Banheiro1chuveiroavc1" class="toClicked avc click" style="display:none; top:33%; left:18%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Banheiro1chuveiroavc').click()">
-                <img id="Banheiro1chuveiropingo" class="eletro" style="display:none; width:3%; height:50%; top:39%; left:14.5%;" src="./assets/images/simulador/Efeitos/pingo.gif">
-            </div>
-            <div name="Escritorio" id="1" class="comodo" style="top:50%; left:0%; z-index:1; background-image:url('./assets/images/simulador/Comodos/Escritorio.png'); " onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=1">
-                <div title="Clique aqui para sair do comodo Escritorio" class="porta toClicked click" onclick="reduzir('1','50','0'); mall();">
-                </div>
-                <div class="full foco" id="Escritoriofoco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(1,'Escritorio');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Escritorioluz" name="luz" class="eletro Escritorio" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Escritorio','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Escritorioluz').click()">
-                </div>
-                <img id="Escritorioluzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Escritorio'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Escritorio')">
-                <img id="Escritorioluzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Escritorioluzavc').click()">
-                <div id="Escritorioabajur" name="abajur" class="eletro Escritorio" style="top:56%; left:45%; width:5%; height:10%; background-image:url('./assets/images/simulador/Eletros/abajuroff.png')" onclick="ligar('Escritorio','abajur');">
-                </div>
-                <div title="clique aqui para ligar o(a) abajur" class="toClicked click" style="top:56%; left:45%; width:5%; height:10%;" onclick="$('#Escritorioabajur').click()">
-                </div>
-                <img id="Escritorioabajuravc" class="eletro avc" style="display:none; top:56%; left:50%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Escritorio'; eletr='abajur'; click1(); $('.editor').children().attr('value','Você está editando o(a) Abajur do(a) Escritorio')">
-                <img id="Escritorioabajuravc1" class="toClicked avc click" style="display:none; top:56%; left:50%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Escritorioabajuravc').click()">
-                <img id="Escritorioabajurabajur" class="eletro" style="display:none; width:5%; height:8%; top:58%; left:43%;" src="./assets/images/simulador/Efeitos/abajurefect.png">
-                <div id="Escritoriocomputador" name="computador" class="eletro Escritorio" style="top:60%; left:10%; width:12%; height:11%; background-image:url('./assets/images/simulador/Eletros/computadoroff.png')" onclick="ligar('Escritorio','computador');">
-                </div>
-                <div title="clique aqui para ligar o(a) computador" class="toClicked click" style="top:60%; left:10%; width:12%; height:11%;" onclick="$('#Escritoriocomputador').click()">
-                </div>
-                <img id="Escritoriocomputadoravc" class="eletro avc" style="display:none; top:60%; left:22%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Escritorio'; eletr='computador'; click1(); $('.editor').children().attr('value','Você está editando o(a) Computador (DESKTOP) do(a) Escritorio')">
-                <img id="Escritoriocomputadoravc1" class="toClicked avc click" style="display:none; top:60%; left:22%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Escritoriocomputadoravc').click()">
-            </div>
-            <div name="Quarto3" id="8" class="comodo" style="top:0%; left:25%; z-index:2; background-image:url('./assets/images/simulador/Comodos/Quarto3.png'); " onmouseover="this.style.zIndex=100" ;="" onmouseout="this.style.zIndex=2">
-                <div title="Clique aqui para sair do comodo Quarto3" class="porta toClicked click" onclick="reduzir('8','0','25'); mall();">
-                </div>
-                <div class="full foco" id="Quarto3foco" style="background-image:url('./assets/images/simulador/Efeitos/perderfoco.png')">
-                </div>
-                <div class="full transparente click" onclick="aumentar(8,'Quarto3');">
-                </div>
-                <img class="porta" src="./assets/images/simulador/Geral/portafechada.png">
-                <div id="Quarto3luz" name="luz" class="eletro Quarto3" style="top:12%; left:49%; width:2%; height:15%; background-image:url('./assets/images/simulador/Eletros/luzoff.png')" onclick="ligar('Quarto3','luz');">
-                </div>
-                <div title="clique aqui para ligar o(a) luz" class="toClicked click" style="top:12%; left:49%; width:2%; height:15%;" onclick="$('#Quarto3luz').click()">
-                </div>
-                <img id="Quarto3luzavc" class="eletro avc" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/advanced.png" onclick="comod='Quarto3'; eletr='luz'; click1(); $('.editor').children().attr('value','Você está editando o(a) Lâmpada do(a) Quarto3')">
-                <img id="Quarto3luzavc1" class="toClicked avc click" style="display:none; top:12%; left:51%;" src="./assets/images/simulador/Geral/transparente.png" onclick="$('#Quarto3luzavc').click()">
-            </div>
+    <div class='toConfig' style='display: none;'>
+        <img class='full' src='./assets/images/simulador/Efeitos/perderfoco.png'
+             style='background-color: #000000; opacity: 0.8; filter: alpha(opacity =             80);'> <img class='closeToConfig'
+                                                                          onclick='fechar()'
+                                                                          src="./assets/images/simulador/Geral/close.png"
+                                                                          title="Fechar e Voltar para a Casa">
+        <div class='editor'>
+            <input readonly='readonly'>
         </div>
-
-
-        <div class='toConfig' style='display: none;'>
-            <img class='full' style='background-color: #000000; opacity: 0.8; filter: alpha(opacity =             80);' src='./assets/images/simulador/Efeitos/perderfoco.png'> <img class='closeToConfig' src="./assets/images/simulador/Geral/close.png"
-                onclick='fechar()' title="Fechar e Voltar para a Casa">
-            <div class='editor'>
-                <input readonly='readonly'>
+        <div class='config'>
+            <div class='help'>
+                <img class='full' src='./assets/images/simulador/Efeitos/perderfoco.png'
+                     style='background-color: #FFFFFF; opacity: 0.7; filter: alpha(opacity =               70); z-index: -1;'>
+                <font color="white"> O cálculo de consumo de cada eletrodoméstico é dado pela equação: <br>
+                    <font color="green">
+                        <b>kWh</b>
+                    </font> =
+                    <font color="red">
+                        <b>Watts</b>
+                    </font>*
+                    <font color="blue">
+                        <b>Dias</b>
+                    </font>*
+                    <font color="gold">
+                        <b>Horas</b>
+                    </font>/1000 <br> Atribuímos à
+                    <font color="orange">
+                        <b>Taxa</b>
+                    </font> o valor de R$ 0,39024/(0.8735) até o consumo de 50 kWh, após esse valor, a taxa ficará
+                    definida por 0,39024/(0.7435)<br> Assim
+                    <font color="green">
+                        <b>kWh</b>
+                    </font>*(
+                    <font color="orange">
+                        <b>Taxa</b>
+                    </font>) é igual ao resultado em R$. <br>
+                    <br>
+                    <font style="text-align: justify;"> Nessa parte de configuração você pode definir a quantidade de
+                        eletrodomésticos da mesma espécie, a quantidade de Watts utilizada e quantos dias e horas por
+                        mês você utiliza.</font>
+                    <br> Obs: Caso exista mais do mesmo eletrodoméstico façaa uma média entre todos.
+                </font>
             </div>
-            <div class='config'>
-                <div class='help'>
-                    <img class='full' src='./assets/images/simulador/Efeitos/perderfoco.png' style='background-color: #FFFFFF; opacity: 0.7; filter: alpha(opacity =               70); z-index: -1;'>
-                    <font color="white"> O cálculo de consumo de cada eletrodoméstico é dado pela equação: <br>
-                        <font color="green">
-                            <b>kWh</b>
-                        </font> =
-                        <font color="red">
-                            <b>Watts</b>
-                        </font>*
-                        <font color="blue">
-                            <b>Dias</b>
-                        </font>*
-                        <font color="gold">
-                            <b>Horas</b>
-                        </font>/1000 <br> Atribuímos à
-                        <font color="orange">
-                            <b>Taxa</b>
-                        </font> o valor de R$ 0,39024/(0.8735) até o consumo de 50 kWh, após esse valor, a taxa ficará definida por 0,39024/(0.7435)<br> Assim
-                        <font color="green">
-                            <b>kWh</b>
-                        </font>*(
-                        <font color="orange">
-                            <b>Taxa</b>
-                        </font>) é igual ao resultado em R$. <br>
-                        <br>
-                        <font style="text-align: justify;"> Nessa parte de configuração você pode definir a quantidade de eletrodomésticos da mesma espécie, a quantidade de Watts utilizada e quantos dias e horas por mês você utiliza.</font>
-                        <br> Obs: Caso exista mais do mesmo eletrodoméstico façaa uma média entre todos.
-                    </font>
-                </div>
-                <div class="configToConfig">
-                    <input readonly="readonly" class="input">
-                    <input readonly="readonly" value="Novo">
-                    <input readonly="readonly" value="Anterior">
-                    <input readonly="readonly" value="Qtd">
-                    <input type="text" id="nqtd">
-                    <input readonly="readonly" id="aqtd">
-                    <input readonly="readonly" value="Watts">
-                    <input type="text" id="nwat">
-                    <input readonly="readonly" id="awat">
-                    <input readonly="readonly" value="Dias">
-                    <input type="text" id="ndia">
-                    <input readonly="readonly" id="adia">
-                    <input readonly="readonly" value="Horas">
-                    <input type="text" id="nhrs">
-                    <input readonly="readonly" id="ahrs">
-                    <input type="button" class="btn btn-success" value="Trocar" onclick="trocar()" style="margin-left: -1px; width: 33%;">
-                    <input type="button" class="btn" value="Limpar" onclick="limpar()" style="margin-left: -1px; width: 33%;">
-                    <input class="btn" type="button" value="Default" onclick="def()" style="margin-left: -1px; width: 33%;">
-                </div>
+            <div class="configToConfig">
+                <input class="input" readonly="readonly">
+                <input readonly="readonly" value="Novo">
+                <input readonly="readonly" value="Anterior">
+                <input readonly="readonly" value="Qtd">
+                <input id="nqtd" type="text">
+                <input id="aqtd" readonly="readonly">
+                <input readonly="readonly" value="Watts">
+                <input id="nwat" type="text">
+                <input id="awat" readonly="readonly">
+                <input readonly="readonly" value="Dias">
+                <input id="ndia" type="text">
+                <input id="adia" readonly="readonly">
+                <input readonly="readonly" value="Horas">
+                <input id="nhrs" type="text">
+                <input id="ahrs" readonly="readonly">
+                <input class="btn btn-success" onclick="trocar()" style="margin-left: -1px; width: 33%;" type="button"
+                       value="Trocar">
+                <input class="btn" onclick="limpar()" style="margin-left: -1px; width: 33%;" type="button"
+                       value="Limpar">
+                <input class="btn" onclick="def()" style="margin-left: -1px; width: 33%;" type="button" value="Default">
             </div>
-        </div>
-
-        <img class='otherdiv' id='otherdiv' style="display: none;" src="./assets/images/simulador/Efeitos/perderfoco.png">
-
-        <!--  Telhado -->
-
-        <div class='telhado'>
-            <img class='full' src='./assets/images/simulador/Geral/telhado.png'>
-        </div>
-
-        <div class='print'>
-            <img class='image_print' src='./assets/images/simulador/Geral/print.png' onclick="javascript:imprimir();">
-            <div style='left: 15%;'>Clique na imagem ao lado para imprimir sua lista.
-            </div>
-        </div>
-        <div class='listview'>
-            <table border="1" style="text-transform: uppercase; font-size: 10px;">
-            </table>
-        </div>
-        <div class='conta'>
-            <div>
-            </div>
-            <img class="full" src='./assets/images/simulador/Geral/conta.png'>
-            <div class='topresult01' style="left: 40%;">
-                <input readonly='readonly' id='mes' class='result' value=''>
-            </div>
-            <div class='topresult02' style='left: 40%;'>
-                <input readonly='readonly' class='result' id='watts' value="0">
-            </div>
-            <div class='topresult01' style='left: 73%;'>
-                <input readonly='readonly' class='result' id='date' value=''>
-            </div>
-            <div class='topresult02' style='left: 73%;'>
-                <input readonly='readonly' class='result' id='result' value='0,00'>
-            </div>
-            <div style='top: 100%; font-size: 80%; height: 15%;'>
-                OBS: A taxa usada até o consumo de 50 kwh é dada pelo cálculo: 0.39024 / (0.8735); Após, é dada pelo cálculo: 0.39024 / (0.7435);<br> Sua taxa atual é: <input style="width: 30%" value='0.39024 / (0.8735)' readonly="readonly" id='taxinha'>
-            </div>
-        </div>
-        <div class='style'>Simulador de Consumo de Energia para Eficiência Energética
         </div>
     </div>
+
+    <img class='otherdiv' id='otherdiv' src="./assets/images/simulador/Efeitos/perderfoco.png" style="display: none;">
+
+    <!--  Telhado -->
+
+    <div class='telhado'>
+        <img class='full' src='./assets/images/simulador/Geral/telhado.png'>
+    </div>
+
+    <div class='print'>
+        <img class='image_print' onclick="javascript:imprimir();" src='./assets/images/simulador/Geral/print.png'>
+        <div style='left: 15%;'>Clique na imagem ao lado para imprimir sua lista.
+        </div>
+    </div>
+    <div class='listview'>
+        <table border="1" style="text-transform: uppercase; font-size: 10px;">
+        </table>
+    </div>
+    <div class='conta'>
+        <div>
+        </div>
+        <img class="full" src='./assets/images/simulador/Geral/conta.png'>
+        <div class='topresult01' style="left: 40%;">
+            <input class='result' id='mes' readonly='readonly' value=''>
+        </div>
+        <div class='topresult02' style='left: 40%;'>
+            <input class='result' id='watts' readonly='readonly' value="0">
+        </div>
+        <div class='topresult01' style='left: 73%;'>
+            <input class='result' id='date' readonly='readonly' value=''>
+        </div>
+        <div class='topresult02' style='left: 73%;'>
+            <input class='result' id='result' readonly='readonly' value='0,00'>
+        </div>
+        <div style='top: 100%; font-size: 80%; height: 15%;'>
+            OBS: A taxa usada até o consumo de 50 kwh é dada pelo cálculo: 0.39024 / (0.8735); Após, é dada pelo
+            cálculo: 0.39024 / (0.7435);<br> Sua taxa atual é: <input id='taxinha' readonly="readonly"
+                                                                      style="width: 30%" value='0.39024 / (0.8735)'>
+        </div>
+    </div>
+    <div class='style'>Simulador de Consumo de Energia para Eficiência Energética
+    </div>
+</div>
 </body>
 
 </html>

@@ -103,12 +103,14 @@ function load() {
     im81on = new Image(2, 15);
     im81on.src = './assets/images/simulador/Eletros/luzon.png';
     im81off = new Image(2, 15);
-    im81off.src = './assets/images/simulador/Eletros/luzoff.png';;
+    im81off.src = './assets/images/simulador/Eletros/luzoff.png';
+    ;
     $('.load').css('display', 'none');
     $('.configToConfig').children().css('width', '33%');
     resize();
     zero();
 }
+
 var comodo = new Array();
 comodo[4] = 'Sala';
 comodo[1] = 'Cozinha';
@@ -509,7 +511,6 @@ var total;
 var totalwatts;
 
 
-
 var taxa;
 var visualizacao = 0;
 
@@ -554,7 +555,8 @@ function reduzir(idiv, top, left) {
 
 function ligar(a, b) {
     if (eletro[a][b]['status'] == 0) {
-        if (b == "chuveiro" || b == "coifa" || b == "tv") {} else {
+        if (b == "chuveiro" || b == "coifa" || b == "tv") {
+        } else {
             if (browser == "Chrome" || browser == "Safari") {
                 $('#' + a + b).css('background-image',
                     "url(./assets/images/simulador/Eletros/" + b + "on" + extension + ")");
@@ -593,7 +595,8 @@ function ligar(a, b) {
 
         eletro[a][b]['status'] = 1;
     } else {
-        if (b == "chuveiro" || b == "coifa") {} else {
+        if (b == "chuveiro" || b == "coifa") {
+        } else {
             if (browser == "Chrome" || browser == "Safari") {
                 $('#' + a + b).css('background-image',
                     "url(./assets/images/simulador/Eletros/" + b + "off" + extension + ")");
